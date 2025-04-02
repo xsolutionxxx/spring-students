@@ -8,12 +8,14 @@
 
 <body>
     <h1>Student List</h1>
+    <a href="/students/add">Add New Student</a>
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Age</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +23,10 @@
                 <td th:text="${student.id}"></td>
                 <td th:text="${student.name}"></td>
                 <td th:text="${student.age}"></td>
+                <td>
+                    <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+                    <a th:href="@{/students/delete/{id}(id=${student.id})}">Delete</a>
+                </td>
             </tr>
         </tbody>
     </table>
